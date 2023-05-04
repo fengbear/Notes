@@ -1,0 +1,14 @@
+baseurl = "https://notes.cubercsl.site"
+languageCode = "zh"
+title = "Feng's Notes"
+hasCJKLanguage = true
+disableKinds = ["RSS", "sitemap"]
+
+[params]
+footer = "&copy; fengbear 2022 -- {Year}"
+
+[permalinks]
+notes = "/notes/:slug"
+
+[taxonomies]
+tag = "tags"

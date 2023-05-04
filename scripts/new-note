@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Create a new note in the notes directory
+# Usage: new-note <note-name>
+
+# Get the directory of this script
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Get the name of the note
+NOTE_NAME=$1
+
+TIME=$(date +%s) # Get the current time in seconds
+slug=$(printf "%x" $TIME) # Convert the note name to a slug
+# Create the note
+cat > $DIR/../content/notes/$slug.md << EOF
+---
+title: $NOTE_NAME
+slug: $slug
+date: $(date --date=@$TIME '+%Y-%m-%dT%H:%M:%S%z')
+---
+EOF

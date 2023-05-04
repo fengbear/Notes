@@ -1,0 +1,6 @@
+.DS_Store
+.hugo_build.lock
+_vendor
+public/
+resources/_gen
+jsconfig.json

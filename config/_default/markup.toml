@@ -1,0 +1,6 @@
+[highlight]
+codeFences = true
+noClasses = false
+
+[goldmark.renderer]
+unsafe = true

@@ -1,0 +1,11 @@
+<footer>
+    {{ with .Site.Params.footer }}
+    <hr />
+    {{ replace . "{Year}" now.Year | markdownify }}
+    {{ end }}
+</footer>
+{{ partialCached "footer/fonts.html" . }}
+{{ partialCached "footer/anchor.html" . }}
+{{ if or .Params.math .Site.Params.math }}
+{{ partialCached "footer/math.html" . }}
+{{ end }}

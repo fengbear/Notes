@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+    {{if not .IsHome }}{{ .Title | markdownify | plainify | safeHTML }} | {{ end }}
+    {{ .Site.Title | markdownify | plainify | safeHTML }}
+</title>
+{{ partial "head/seo.html" . }}
+{{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
+{{ $styles := resources.Get "scss/styles.scss" | resources.ToCSS $options}}
+{{ if hugo.IsProduction }}
+{{ $styles = $styles | fingerprint }}
+{{ end }}
+<link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+<link href="/favicon.svg" rel="icon">

@@ -1,0 +1,254 @@
+@import "fonts.scss";
+@import "syntax.scss";
+
+/*
+ * Light and Shite
+ * Adapted for Hugo Theme
+ * The MIT License (MIT)
+ * Copyright (c) 2019 Alex Johnstone
+ */
+
+/* Set the colour */
+
+:root {
+    --maincolour: #009966;
+}
+
+/* Formatting */
+
+body {
+    font: 1.05em/1.62em var(--base-font-family);
+    margin: 1em auto;
+    max-width: 48em;
+    padding: 0.62em;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2em;
+}
+
+p {
+    text-align: justify;
+}
+
+.terms {
+    font-size: 0.9em;
+}
+
+.lastmod {
+    font-style: italic;
+}
+
+hr {
+    border-style: dashed;
+    color: #ddd;
+}
+
+/* Hyperlink colors */
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: var(--maincolour);
+}
+a:visited {
+    color: var(--maincolour);
+}
+a:hover {
+    color: #000000;
+}
+a:active {
+    color: var(--maincolour);
+}
+
+/* Code Blocks */
+
+pre code {
+    background: none;
+}
+
+code {
+    background: #f9f9f9;
+}
+
+pre {
+    padding: 1em;
+    box-shadow: 5px 5px 5px #eee;
+    border-left: 2px solid var(--maincolour);
+    overflow-x: auto;
+    word-wrap: normal;
+    white-space: pre;
+}
+
+blockquote {
+    margin: 1em 0;
+    background: #f9f9f9;
+    border-left: 5px solid #ccc;
+    box-shadow: 5px 5px 5px #eee;
+    padding: 3px 1em 3px;
+}
+
+/* Footer */
+
+footer {
+    font-size: 0.75em;
+    text-align: center;
+    font-family: monospace;
+}
+
+/* Make it responsive */
+
+@media print {
+    body {
+        max-width: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Nav bar */
+
+.menu {
+    margin-bottom: 15px;
+    padding: 0 0;
+    text-align: center;
+    li {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1.2em;
+        margin-right: 4.5px;
+        padding: 7.5px 15px;
+    }
+}
+
+.article-meta {
+    text-align: center;
+}
+
+/* Table */
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+
+table th,
+td {
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+    background: #eee;
+}
+
+table th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: var(--maincolour);
+    color: white;
+}
+
+/* Tags */
+ul.terms,
+.article-tags {
+    padding: 0 0;
+    li {
+        a {
+            font-family: var(--code-font-family);
+            font-size: 0.9em;
+        }
+        display: inline-table;
+        padding: 5px 5px;
+        margin: 3px 6px;
+        box-shadow: 5px 5px 5px #eee;
+        background-color: #f9f9f9;
+        .count {
+            margin-left: 3px;
+        }
+    }
+}
+
+/* Pagination */
+.pagination {
+    margin-bottom: 10px;
+    padding: 0 0;
+    text-align: center;
+    li {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1em;
+        margin-right: 3px;
+        padding: 5px 10px;
+    }
+}
+.date {
+    font-size: 1em;
+}
+
+/// Make long KaTeX equations scrollable in the x-axis
+.katex-display > .katex {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+
+.toc {
+
+    margin: 0 2px 40px 2px;
+    border: 1px solid #eee;
+    background: #f9f9f9;
+    border-radius: 5px;
+    padding: 0.4em;
+
+    details summary {
+        cursor: zoom-in;
+        margin-inline-start: 20px;
+    }
+
+    details[open] summary {
+        cursor: zoom-out;
+    }
+
+    .details {
+        display: inline;
+        font-weight: bold;
+    }
+
+    li ul {
+        margin-inline-start: 0px;
+    }
+
+    summary:focus {
+        outline: 0;
+    }
+
+    a:hover {
+        box-shadow: 0 1px 0;
+    }
+}
+
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+    display: inline-flex;
+    color: var(--maincolour);
+    margin-inline-start: 8px;
+    font-weight: 500;
+    user-select: none;
+}

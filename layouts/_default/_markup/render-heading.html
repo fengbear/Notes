@@ -1,0 +1,5 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}
+{{ if not .Page.IsHome }}
+    <a hidden class="anchor" aria-hidden="true" href="#{{ .Anchor | safeURL }}">¶</a>
+{{ end }}
+</h{{ .Level }}>
